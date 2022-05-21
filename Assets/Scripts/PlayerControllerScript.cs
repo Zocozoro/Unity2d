@@ -44,15 +44,15 @@ public class PlayerControllerScript : MonoBehaviour
         //jumping code
         myAnim.SetFloat("verticalVelocity", myRB.velocity.y);
 
-
         //running code
         float move = Input.GetAxis("Horizontal");
 
         if (canMove)
         {
-            if (move > 0 && !facingRight) Flip();
-            else if (move < 0 && facingRight) Flip();
-
+            if (move > 0 && !facingRight) 
+                Flip();
+            else if (move < 0 && facingRight) 
+                Flip();
 
             myRB.velocity = new Vector2(move * maxSpeed, myRB.velocity.y);
             myAnim.SetFloat("moveVelocity", Mathf.Abs(move));
